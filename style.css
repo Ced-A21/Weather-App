@@ -18,7 +18,7 @@ body{
 .card{
     background: #293a5039;
     color:white;
-    padding:2em;
+    padding:1.5em;
     border-radius: 30px;
     width: 100%;
     max-width: 440px;
@@ -46,12 +46,13 @@ body{
 input.search-bar{
     border:none;
     outline: none;
-    padding:.5em 1.5em;
+    padding:.4em 1.5em;
     border-radius:24px;
     background: #7c7c7c2b;
     color:white;
     font-family: inherit;
-    font-size:100%
+    font-size:105%;
+    width: calc(100% - 50px);
 }
 
 input.search-bar:hover{
@@ -62,4 +63,13 @@ input.search-bar:hover{
 .search-btn:hover{
     cursor: pointer;
     background: #7c7c7c45;
+    transition:0.2 ease-in-out;
+}
+
+h1.temp{
+    margin:0;
+}
+h2.city{
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
