@@ -68,8 +68,33 @@ input.search-bar:hover{
 
 h1.temp{
     margin:0;
+    margin-bottom: .5rem;
 }
 h2.city{
     margin-bottom: 1em;
     margin-top: 1em;
+}
+
+.description{
+    text-transform: capitalize;
+    margin-left: .2em;
+}
+.iconContainer{
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+}
+.weather.loading{
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+
+.weather.loading:after{
+    visibility: visible;
+    content: "Loading...";
+    color:white;
+    position: absolute;
+    top:0;
+    left:20px
 }
