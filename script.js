@@ -12,19 +12,35 @@ let weather = {
   },
 
   displayWeather: function (data) {
-    const { name } = data;
+    const { name, timezone } = data;
     const { icon, description } = data.weather[0];
-    const { temp, humidity } = data.main;
+    const { temp, humidity, pressure,feels_like } = data.main;
     const { speed } = data.wind;
-    document.querySelector(".city").innerHTML = `Weather in ${name}`;
+    const sunriseTimestamp = data.sys.sunrise; // Sunrise timestamp (Unix, UTC)
+    const sunsetTimestamp = data.sys.sunset; 
+
+    const sunriseDate = new Date(sunriseTimestamp * 1000);
+    const sunsetDate = new Date(sunsetTimestamp * 1000);
+    
+    // Format time
+    const sunriseTime = sunriseDate.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true});
+    const sunsetTime = sunsetDate.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true});
+
+    document.querySelector(".city").innerHTML = `${name}`;
     document.querySelector(".temp").innerHTML = `${temp}&degC`;
     document.querySelector(
       ".icon"
-    ).src = `https://openweathermap.org/img/wn/${icon}.png`;
+    ).src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     document.querySelector(".description").textContent = `${description}`;
-    document.querySelector(".humidity").textContent = `Humidity: ${humidity}%`;
-    document.querySelector(".wind").innerHTML = `Wind Speed: ${speed} km/h`;
+    document.querySelector(".humidity").textContent = `${humidity}%`;
+    document.querySelector(".wind").innerHTML = `${speed} km/h`;
     document.querySelector(".weather").classList.remove("loading");
+    document.querySelector(".pressure").innerHTML = `${pressure} hPa`;
+    document.querySelector('.feels').innerHTML = `${feels_like}&degC`;
+
+
+    document.querySelector('.sunrise').innerHTML =`${sunriseTime}`
+    document.querySelector('.sunset').innerHTML =`${sunsetTime}`
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);

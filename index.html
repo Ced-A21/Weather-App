@@ -10,26 +10,114 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="card">
-        <div class="search">
+    <div class="main-container">
+        <div class="inner-container">
+            <div class="search-cont">
+                <div class="search">
+                    <input type="text" class="search-bar" placeholder="Search">
+                    <button class="search-btn">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="HeaderAlignment">   
+                <div class="TodayHeader">
+                    <h1>Today's Overview</h1>
+                </div>
+            </div>
+        </div>
+        <section class="WeatherData">
+            <div class="weather loading">
+                <img src="" alt="" class="icon">
+                <h1 class="temp">51&degC</h1>
+                <div class="iconContainer">
+                    <div class="description">Cloudy</div>
+                </div>
+                <div class="location">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#fff" stroke-width="2" d="M12,22 C12,22 4,16 4,10 C4,5 8,2 12,2 C16,2 20,5 20,10 C20,16 12,22 12,22 Z M12,13 C13.657,13 15,11.657 15,10 C15,8.343 13.657,7 12,7 C10.343,7 9,8.343 9,10 C9,11.657 10.343,13 12,13 L12,13 Z"></path></svg>
+                    <p class="city">Philippines</p>
+                </div>
+                <div class="Date">
+                    <p>
+                        August 21,2002
+                    </p>
+                </div>
+            </div>
+            <div class="WindPressureSunrise">
+                <div class="Wind-Container">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg>
+                    <div class="WindSpeed">
+                        <p style="color:grey; margin-bottom: .5rem;">Wind Speed</p>
+                        <h2 class="wind">Wind speed: 6.2km/h</h2>
+                    </div>
+                </div>
+                <div class="Pressure-Container">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M12,4C6.486,4,2,8.486,2,14c0,1.55,0.354,3.045,1.051,4.445C3.221,18.785,3.567,19,3.946,19h16.107 c0.379,0,0.726-0.215,0.896-0.555C21.646,17.045,22,15.55,22,14C22,8.486,17.514,4,12,4z M19.41,17H4.59 C4.198,16.042,4,15.035,4,14c0-4.411,3.589-8,8-8s8,3.589,8,8C20,15.035,19.802,16.042,19.41,17z"></path><path d="M10.939,12.939c-0.168,0.111-0.323,0.262-0.44,0.44c-0.465,0.708-0.268,1.657,0.44,2.121 c0.707,0.465,1.657,0.268,2.121-0.44l3.962-6.038c0.006-0.011,0.007-0.024,0-0.035c-0.01-0.015-0.03-0.019-0.045-0.01 L10.939,12.939z"></path></svg>
+                    <div class="Pressure">
+                        <p style="color:grey; margin-bottom: .5rem;">Pressure </p>
+                        <h2 class="pressure">1008 hPa</h2>
+                    </div>
+                </div>
+                <div class="Sunrise-Container">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M17 18a5 5 0 0 0-10 0"></path><line x1="12" y1="2" x2="12" y2="9"></line><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"></line><line x1="1" y1="18" x2="3" y2="18"></line><line x1="21" y1="18" x2="23" y2="18"></line><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"></line><line x1="23" y1="22" x2="1" y2="22"></line><polyline points="8 6 12 2 16 6"></polyline></svg>
+                    <div class="Sunrise">
+                        <p style="color:grey; margin-bottom: .5rem;">Sunrise </p>
+                        <h2 class="sunrise">06:26</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="WindPressureSunrise">
+                <div class="Wind-Container">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg>
+                    <div class="Humidity">
+                        <p style="color:grey; margin-bottom: .5rem;">Humidity</p>
+                        <h2 class="humidity"> 48%</h2>
+                    </div>
+                </div>
+                <div class="Pressure-Container">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M12,4C6.486,4,2,8.486,2,14c0,1.55,0.354,3.045,1.051,4.445C3.221,18.785,3.567,19,3.946,19h16.107 c0.379,0,0.726-0.215,0.896-0.555C21.646,17.045,22,15.55,22,14C22,8.486,17.514,4,12,4z M19.41,17H4.59 C4.198,16.042,4,15.035,4,14c0-4.411,3.589-8,8-8s8,3.589,8,8C20,15.035,19.802,16.042,19.41,17z"></path><path d="M10.939,12.939c-0.168,0.111-0.323,0.262-0.44,0.44c-0.465,0.708-0.268,1.657,0.44,2.121 c0.707,0.465,1.657,0.268,2.121-0.44l3.962-6.038c0.006-0.011,0.007-0.024,0-0.035c-0.01-0.015-0.03-0.019-0.045-0.01 L10.939,12.939z"></path></svg>
+                    <div class="Feels">
+                        <p style="color:grey; margin-bottom: .5rem;">Feels like</p>
+                        <h2 class="feels">34&degC</h2>
+                    </div>
+                </div>
+                <div class="Sunrise-Container">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M17 18a5 5 0 0 0-10 0"></path><line x1="12" y1="2" x2="12" y2="9"></line><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"></line><line x1="1" y1="18" x2="3" y2="18"></line><line x1="21" y1="18" x2="23" y2="18"></line><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"></line><line x1="23" y1="22" x2="1" y2="22"></line><polyline points="8 6 12 2 16 6"></polyline></svg>
+                    <div class="Sunset">
+                        <p style="color:grey; margin-bottom: .5rem;">Sunset</p>
+                        <h2 class="sunset">19:44</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- <div class="search">
             <input type="text" class="search-bar" placeholder="Search">
             <button class="search-btn">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path></svg>
             </button>
         </div>
-        <div class="weather loading">
-            <h2 class="city">Weather in Philippines</h2>
-            <h1 class="temp">51&degC</h1>
-            <div class="iconContainer">
-                <img src="" alt="" class="icon">
-                <div class="description">Cloudy</div>
+        <div class="HeaderAlignment">   
+            <div class="TodayHeader">
+                <h1>Today's Overview</h1>
             </div>
-            <div class="humidity">
-                Humidity: 60%
-            </div>  
-            <div class="wind"> Wind speed: 6.2km/h</div>
         </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+        <div class="card">
+            <div class="weather loading">
+                <h2 class="city">Weather in Philippines</h2>
+                <h1 class="temp">51&degC</h1>
+                <div class="iconContainer">
+                    <img src="" alt="" class="icon">
+                    <div class="description">Cloudy</div>
+                </div>
+                <div class="humidity">
+                    Humidity: 60%
+                </div>  
+                <div class="wind"> Wind speed: 6.2km/h</div>
+            </div>
+        </div>
+    </div> -->
