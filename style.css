@@ -150,7 +150,9 @@ h1.temp{
     padding: 1.5rem;
     border-radius:10px;
     margin-right:1rem;
-    height: 39.5vh;
+    height:100%;
+    min-height: 39.5vh;
+    max-height: 40vh;
 }
 
 .WeatherData{

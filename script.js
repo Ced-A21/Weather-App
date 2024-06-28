@@ -56,4 +56,17 @@ document.querySelector(".search-bar").addEventListener("keyup", (event) => {
   }
 });
 
+const today = new Date();
+
+const options = {
+  year:'numeric',
+  month:'long',
+  day:'numeric'
+}
+
+const formattedDate = today.toLocaleDateString('en-US', options);
+
+document.querySelector('.date').innerHTML = `${formattedDate}`
+
+
 weather.fetchWeather("Silang");
