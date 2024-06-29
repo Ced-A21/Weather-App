@@ -145,17 +145,17 @@ h1.temp{
     border-radius:10px;
     margin-right:1rem;
     height:100%;
-    min-height: 39.5vh;
-    max-height: 40vh;
+    max-height: 39.1vh;
 }
 
 .WeatherData{
-    height: 300px;
+    height: 450px;
     margin-right: 3rem;
     margin-left: 3rem;
     justify-content: center;
     display: flex;
     flex-direction: row;
+    padding: .5em;
 
 }
 
@@ -203,4 +203,30 @@ h1.temp{
 
 .icon{
     margin-bottom: .5rem;
+}
+
+.hourlyHeader{
+    display:flex;
+    flex-direction: column;
+    color: white;
+    height:100%;
+    max-height: 20vh;
+    padding: 0.5;
+}
+
+.hourlyForecast{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    max-height:60vh;
+}
+.hourDiv{
+    display:flex;
+    justify-content: start;
+    width: 100%;
+    max-width: 300px;
+    margin-right: 31em;
 }
