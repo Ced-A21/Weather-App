@@ -40,15 +40,8 @@ body{
     color:white;
     display:flex;
     /* background-color: white; */
-    justify-content: center;
-    align-items: flex-start;
 }
 
-.HeaderAlignment{
-    width: 100%;
-    max-width: 100px;
-
-}
 
 .card{
     /* background: #293a5039; */
@@ -87,6 +80,7 @@ body{
     display:flex;
     margin-left: 2rem;
     width: 100%;
+    justify-content: center;
     max-width: 100vh;
 }
 input.search-bar{
