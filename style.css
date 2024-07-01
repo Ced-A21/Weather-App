@@ -19,87 +19,300 @@ body{
     flex-direction: column;
 
 }
-.inner-container{
-    /* background-color: blue; */
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    padding: 1.5em;
-    margin-left: 1.5em;
-    margin-right: 1.5rem;
+@media only screen and (max-width:600px){
+    .WindPressureSunrise{
+        display: flex;
+        padding: 0px;
+        flex-direction: column;
+        background: transparent;
+        width: 100%;
+        min-width: 7.5rem;
+    }
+    
+    .Wind-Container, .Pressure-Container, .Sunrise-Container{
+        height: 16vh;
+        border-radius: 10px;
+        background-color: #293a5039;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        padding:.5rem;
+        flex-direction: row;
+    }
+    h1{
+        font-size: .1em;
+    }
+    h2{
+        font-size: .3em;
+    }
+    p{
+        font-size: .3em;
+        width: 100%;
+    }
+    .weather{
+        min-width: 10rem;
+        margin-right: .1em;
+        min-height: 20vh;
+        
+    }
+    .WindPressureSunrise{
+        margin-right: 0;
+    }
+    .WeatherData{
+        justify-content: center;
+        
+    }
+      .hourlyForecast{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        height: 100%;
+        max-height:20vh;
+        margin-left: 50px;
+
+    }
+    .forecast-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .forecast-day {
+
+        font-weight: bold;
+      }
+    .forecast-icon {
+        width: 25px;
+        height: 25px;
+      }
+    .forecast-temp {
+        margin-top: 5px;
+    }
+    .forecast-card {
+        margin-top: 10px;
+        min-width: 1px;
+    }
 
 }
-.search-cont{
-    /* background-color: green; */
-    display: flex;
-    justify-content: center;
+@media only screen and (max-width:768px){
+    h1{
+        font-size: 1.5em;
+    }
+    h2{
+        font-size: 1em;
+    }
+    p{
+        font-size: 1em;
+        width: 100%;
+    }
+    .WeatherData{
+        justify-content: center;
+        margin-left: 5em;
+    }
+    .weather{
+        margin-left: 2em;
+    }
+      .hourlyForecast{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        height: 100%;
+        max-height:20vh;
+
+    }
+    .forecast-container{
+        display: flex;
+        flex-direction: row;
+        max-width: 80px;
+        justify-content: center;
+        align-items: center;
+    }
+    .forecast-day {
+        font-size: 10px;
+        font-weight: bold;
+      }
+    .forecast-icon {
+        width: 25px;
+        height: 25px;
+      }
+    .forecast-temp {
+        margin-top: 5px;
+    }
+    .forecast-card {
+        margin-top: 10px;
+        min-width:85px;
+    }
 }
 
-.TodayHeader{
-    margin-top: 1.5em;
-    margin-bottom:1.5em;
-    color:white;
-    display:flex;
-    /* background-color: white; */
-}
+@media only screen and (max-width: 1920px) {
+    .forecast-card {
+        border: 2px solid transparent;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 5px;
+        background-color: #293a5039;
+        margin-top: 10px;
+        width: 150px;
+        max-width: 150px;
+        text-align: center;
+        box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    .hourlyForecast{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        height: 100%;
+        max-height:50vh;
+    }
+    .inner-container{
+        /* background-color: blue; */
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 1.5em;
+        margin-left: 1.5em;
+        margin-right: 1.5rem;
+        align-items: center;
+    }
+    .search-cont{
+        /* background-color: green; */
+        display: flex;
+        justify-content: center;
+    }
+    .TodayHeader{
+        margin-top: 1.5em;
+        margin-bottom:1.5em;
+        color:white;
+        display:flex;
+        /* background-color: white; */
+    }
+    .search{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 80vh;   
+    }    
+    .search-btn{
+        margin: .5em;
+        border-radius: 18px;
+        border:none;
+        height: 40px;
+        width: 40px;
+        outline: none;
+        background-color: #7c7c7c2b;
+        color:white
+    }
+    .HeaderAlignment{
+        display:flex;
+        margin-left: 2rem;
+        width: 100%;
+        justify-content: center;
+        max-width: 100vh;
+    }
+    input.search-bar{
+        border:none;
+        outline: none;
+        padding:.4em 1.5em;
+        border-radius:24px;
+        background: #7c7c7c2b;
+        color:white;
+        font-family: inherit;
+        font-size:105%;
+        width: 100%;
+        min-width: 40vh;
+    }
+    
+    
 
+    
+    .description{
+        text-transform: capitalize;
+        margin-bottom: 2rem;
+    }
+    .iconContainer{
+        display:flex;
+        align-items: center;
+        flex-direction: row;
+    }
 
-.card{
-    /* background: #293a5039; */
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    color:white;
-    padding:1.5em;
-    border-radius: 30px;
-    margin-right: 1em;
-    margin-left: 1em;
+    .weather, .WindPressureSunrise{
+        color: white;
+        background: #293a5039;
+        width: 100%;
+        max-width: 15rem;
+        padding: 1.5rem;
+        border-radius:10px;
+        margin-right:1rem;
+        height:80%;
+        
+        max-height: 100vh;
+    }
 
-}
-
-.search{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 80vh;
-
-}
-
-.search-btn{
-    margin: .5em;
-    border-radius: 18px;
-    border:none;
-    height: 40px;
-    width: 40px;
-    outline: none;
-    background-color: #7c7c7c2b;
-    color:white
-}
-.HeaderAlignment{
-    display:flex;
-    margin-left: 2rem;
-    width: 100%;
-    justify-content: center;
-    max-width: 100vh;
-}
-input.search-bar{
-    border:none;
-    outline: none;
-    padding:.4em 1.5em;
-    border-radius:24px;
-    background: #7c7c7c2b;
-    color:white;
-    font-family: inherit;
-    font-size:105%;
-    width: 100%;
-    max-width: 80vh;
+    .WeatherData{
+        height: 450px;
+        /* margin-right: 3rem;
+        margin-left: 3rem; */
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        padding: .5em;
+    
+    }
+    .WindPressureSunrise{
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        background: transparent;
+        width: 100%;
+        max-width: 16rem;
+    }
+    
+    .Wind-Container, .Pressure-Container, .Sunrise-Container{
+        min-height: 10vh;
+        border-radius: 10px;
+        background-color: #293a5039;
+        margin-bottom: 1rem;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        padding:1rem;
+        flex-direction: row;
+    }
+    .forecast-container{
+        display: flex;
+        flex-direction: row;
+    }
+    
+      .forecast-day {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .forecast-icon {
+        width: 50px;
+        height: 50px;
+      }
+      .forecast-temp {
+        margin-top: 5px;
+      }
+    
 }
 
 input.search-bar:hover{
     cursor: pointer;
     background: #7c7c7c45;
+}
+
+h1.temp{
+    margin:0;
+    margin-bottom: .5rem;
 }
 
 .search-btn:hover{
@@ -108,20 +321,7 @@ input.search-bar:hover{
     transition:0.2 ease-in-out;
 }
 
-h1.temp{
-    margin:0;
-    margin-bottom: .5rem;
-}
 
-.description{
-    text-transform: capitalize;
-    margin-bottom: 2rem;
-}
-.iconContainer{
-    display:flex;
-    align-items: center;
-    flex-direction: row;
-}
 .weather.loading{
     visibility: hidden;
     max-height: 20px;
@@ -137,28 +337,7 @@ h1.temp{
     left:20px
 }
 
-.weather, .WindPressureSunrise{
-    color: white;
-    background: #293a5039;
-    width: 100%;
-    max-width: 15rem;
-    padding: 1.5rem;
-    border-radius:10px;
-    margin-right:1rem;
-    height:100%;
-    max-height: 39.1vh;
-}
 
-.WeatherData{
-    height: 450px;
-    margin-right: 3rem;
-    margin-left: 3rem;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    padding: .5em;
-
-}
 
 .location{
     display: flex;
@@ -173,25 +352,6 @@ h1.temp{
 
 }
 
-.WindPressureSunrise{
-    display: flex;
-    padding: 0;
-    flex-direction: column;
-    background: transparent;
-    width: 100%;
-    max-width: 16rem;
-}
-
-.Wind-Container, .Pressure-Container, .Sunrise-Container{
-    height: 12vh;
-    border-radius: 10px;
-    background-color: #293a5039;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    padding:1rem;
-    flex-direction: row;
-}
 .Sunrise-Container{
     margin-bottom: 0px;
 }
@@ -215,64 +375,18 @@ h1.temp{
     padding: 0.5;
 }
 
-.hourlyForecast{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    align-items: center;
-    height: 100%;
-    max-height:60vh;
-}
+
 .hourDiv{
     display:flex;
-    justify-content: start;
+    justify-content: center;
     width: 100%;
     max-width: 300px;
-    margin-right: 31em;
     flex-direction: column;
     color:white;
+    align-items: center;
 }
 
 .hourDiv h2{
     color:white
 }
 
-.forecastData{
-    display:flex;
-    flex-direction: column;
-    margin-top: 2em;
-
-}
-
-.forecastData p{
-    margin-bottom: 1em;
-}
-.forecast-container{
-    display: flex;
-    flex-direction: row;
-}
-
-.forecast-card {
-    border: 2px solid transparent;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 5px;
-    background-color: #293a5039;
-    margin-top: 10px;
-    width: 100%;
-    min-width: 150px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  .forecast-day {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .forecast-icon {
-    width: 50px;
-    height: 50px;
-  }
-  .forecast-temp {
-    margin-top: 5px;
-  }
