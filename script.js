@@ -11,6 +11,20 @@ let weather = {
       .then((data) => this.displayWeather(data));
   },
 
+  //https://api.openweathermap.org/data/2.5/forecast?q=New%20York&appid=b2cb4aa928c8e5cbec69a6519f782722&cnt=5
+  fetchForecast: function (city){
+    fetch(`
+      https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${this.apiKey}&cnt=5
+      `).then((response) => response.json())
+      .then((data) => this.displayForecast(data));
+
+  },
+
+  displayForecast: function(data){
+    
+  },
+
+
   displayWeather: function (data) {
     const { name, timezone } = data;
     const { icon, description } = data.weather[0];
@@ -44,6 +58,7 @@ let weather = {
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
+    this.fetchForecast(document.querySelector(".search-bar").value);
   },
 };
 document.querySelector(".search-btn").addEventListener("click", () => {

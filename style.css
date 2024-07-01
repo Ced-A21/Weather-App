@@ -229,4 +229,9 @@ h1.temp{
     width: 100%;
     max-width: 300px;
     margin-right: 31em;
+    flex-direction: column;
+}
+
+.hourDiv h2{
+    color:white
 }
