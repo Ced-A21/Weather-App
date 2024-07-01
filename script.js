@@ -9,21 +9,56 @@ let weather = {
     )
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
+      const {coord} = data;
+      this.fetchForecast(coord.lat, coord.lon)
   },
 
   //https://api.openweathermap.org/data/2.5/forecast?q=New%20York&appid=b2cb4aa928c8e5cbec69a6519f782722&cnt=5
-  fetchForecast: function (city){
-    fetch(`
-      https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${this.apiKey}&cnt=5
-      `).then((response) => response.json())
-      .then((data) => this.displayForecast(data));
-
+  fetchForecast: function (lat, lon) {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${this.apiKey}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const dailyForecasts = data.daily.slice(1, 6); // Exclude current day and take next 5 days
+        this.displayForecast(dailyForecasts);
+      })
+      .catch((error) => {
+        console.log("Error fetching forecast:", error);
+      });
   },
 
-  displayForecast: function(data){
-    
+
+
+  displayForecast: function (dailyForecasts) {
+    const forecastContainer = document.querySelector(".forecast-container");
+    forecastContainer.innerHTML = ""; // Clear previous content
+
+    dailyForecasts.forEach((forecast, index) => {
+      if (index > 0) { // Skip today's forecast (index 0)
+        const { dt, weather, temp } = forecast;
+        const date = new Date(dt * 1000); // Convert Unix timestamp to Date object
+
+        const day = date.toLocaleDateString("en-US", { weekday: "short" });
+        const icon = weather[0].icon;
+        const maxTemp = temp.max;
+        const minTemp = temp.min;
+
+        // Create HTML for each forecast card
+        const forecastCard = document.createElement("div");
+        forecastCard.classList.add("forecast-card");
+        forecastCard.innerHTML = `
+          <div class="forecast-day">${day}</div>
+          <img class="forecast-icon" src="https://openweathermap.org/img/wn/${icon}.png" />
+          <div class="forecast-temp">Max: ${maxTemp}&deg;C / Min: ${minTemp}&deg;C</div>
+        `;
+
+        forecastContainer.appendChild(forecastCard);
+      }
+    });
   },
 
+      
 
   displayWeather: function (data) {
     const { name, timezone } = data;
@@ -85,3 +120,11 @@ document.querySelector('.date').innerHTML = `${formattedDate}`
 
 
 weather.fetchWeather("Silang");
+weather.displayForecast([
+  // Sample forecast data for demonstration
+  { dt: 1634253600, weather: [{ icon: "01d" }], temp: { max: 30, min: 20 } },
+  { dt: 1634340000, weather: [{ icon: "02d" }], temp: { max: 28, min: 19 } },
+  { dt: 1634426400, weather: [{ icon: "03d" }], temp: { max: 29, min: 21 } },
+  { dt: 1634512800, weather: [{ icon: "04d" }], temp: { max: 27, min: 18 } },
+  { dt: 1634599200, weather: [{ icon: "09d" }], temp: { max: 25, min: 17 } },
+]);

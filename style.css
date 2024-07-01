@@ -230,8 +230,45 @@ h1.temp{
     max-width: 300px;
     margin-right: 31em;
     flex-direction: column;
+    color:white;
 }
 
 .hourDiv h2{
     color:white
 }
+
+.forecastData{
+    display:flex;
+    flex-direction: column;
+    margin-top: 2em;
+
+}
+
+.forecastData p{
+    margin-bottom: 1em;
+}
+.forecast-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.forecast-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .forecast-day {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .forecast-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .forecast-temp {
+    margin-top: 5px;
+  }
